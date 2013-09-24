@@ -6,6 +6,10 @@ module PadrinoFootballPool
 
     enable :sessions
 
+    DataMapper.auto_migrate!
+
+    Account.create(:email => "admin@admin.com", :name => "admin", :surname => "admin", :password => "admin", :password_confirmation => "admin", :role => "admin")
+
     ##
     # Caching support
     #
