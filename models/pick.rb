@@ -7,7 +7,8 @@ class Pick
   property :week, Integer
   property :team, String
   property :wager, Integer
-  property :winner, Boolean, :default => false
+  property :tie_breaker_total_points, Integer
+  property :is_winner, Boolean, :default => false
 
   validates_presence_of :week, :team, :wager
 end

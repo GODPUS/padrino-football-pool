@@ -1,6 +1,8 @@
 PadrinoFootballPool::App.controllers :picks do
   get :index do
     @picks = Pick.all()
+    @weeks = Week.all()
+    @teams = Team.all()
     render 'picks/index'
   end
 

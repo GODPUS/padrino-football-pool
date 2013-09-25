@@ -4,12 +4,17 @@ class Account
   attr_accessor :password, :password_confirmation
 
   # Properties
-  property :id,               Serial
-  property :name,             String
-  property :surname,          String
-  property :email,            String
-  property :crypted_password, String, :length => 70
-  property :role,             String
+  property :id,                   Serial
+  property :name,                 String
+  property :surname,              String
+  property :email,                String
+  property :crypted_password,     String, :length => 70
+  property :role,                 String
+  property :wins,                 Integer
+  property :losses,               Integer
+  property :playable_week_numbers, String
+
+  has n, :picks
 
   # Validations
   validates_presence_of      :email, :role

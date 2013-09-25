@@ -1,3 +1,17 @@
 <div id="picks">
 	<%= partial 'picks/pick', :collection => @picks %>
+	<% @weeks.each do |week| %>
+		<p>Week <%= week.num %></p>
+		
+		<% week.matchups.each do |matchup| %>
+			<ul>
+				<li>Matchup <%= matchup.teams.size %>
+				<% matchup.teams.each do |team| %>
+					<li><%= team.name %></li>
+				<% end %>
+			</ul>
+		<% end %>
+
+		<h1><%= @teams.size %></h1>
+  <% end %>
 </div>
